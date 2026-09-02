@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Placement Analytics</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        .card img {
+            width: 100%;
+        }
+
+        .back {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 12px;
+            text-align: center;
+            background: #2196f3;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>📊 Placement Analytics Dashboard</h1>
+
+    <div class="dashboard">
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='graphs/internships.png') }}">
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='graphs/projects.png') }}">
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='graphs/coding_skills.png') }}">
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='graphs/communication_skills.png') }}">
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='graphs/cgpa_placement.png') }}">
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='graphs/gender_placement.png') }}">
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='graphs/degree_placement.png') }}">
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='graphs/branch_placement.png') }}">
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='graphs/correlation.png') }}">
+        </div>
+
+    </div>
+
+    <a class="back" href="/">⬅ Back to Predictor</a>
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Campus Placement Predictor</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg, #36b9f0, #14d9d9);
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #2196f3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Smart Campus Placement Predictor</h1>
+
+    <form action="/predict" method="POST">
+
+        <label>Student ID</label>
+        <input type="number" name="Student_ID" required>
+
+        <label>Age</label>
+        <input type="number" name="Age" required>
+
+        <label>Gender</label>
+        <select name="Gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <label>Degree</label>
+        <input type="text" name="Degree" placeholder="B.Tech" required>
+
+        <label>Branch</label>
+        <input type="text" name="Branch" placeholder="CSE" required>
+
+        <label>CGPA</label>
+        <input type="number" step="0.01" name="CGPA" required>
+
+        <label>Internships</label>
+        <input type="number" name="Internships" required>
+
+        <label>Projects</label>
+        <input type="number" name="Projects" required>
+
+        <label>Coding Skills</label>
+        <input type="number" name="Coding_Skills" required>
+
+        <label>Communication Skills</label>
+        <input type="number" name="Communication_Skills" required>
+
+        <label>Aptitude Test Score</label>
+        <input type="number" name="Aptitude_Test_Score" required>
+
+        <label>Soft Skills Rating</label>
+        <input type="number" step="0.1" name="Soft_Skills_Rating" required>
+
+        <label>Certifications</label>
+        <input type="number" name="Certifications" required>
+
+        <label>Backlogs</label>
+        <input type="number" name="Backlogs" required>
+
+        <button type="submit">Predict Placement</button>
+
+    </form>
+
+    {% if prediction_text %}
+        <div class="result">
+            {{ prediction_text }}
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
